@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native';
+import {Raleway_400Regular, useFonts} from '@expo-google-fonts/raleway'
+
+
 
 const styles = StyleSheet.create({
-     
+
   containers:{
     flex: 1,
     backgroundColor: 'white',
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
     },
 
     input:{
-      fontFamily: 'Roboto',
+      fontFamily: 'Raleway_400Regular',
       backgroundColor: 'white',
       width: '90%',
       marginBottom: 0,
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
     },
   
     textSubmit:{
-      
+      fontFamily: 'Raleway_400Regular',
       color: 'white',
       fontSize: 17
     },

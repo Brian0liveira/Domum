@@ -17,15 +17,16 @@ export default function Home() {
   return (
       <Tab.Navigator
       initialRouteName="Noticias"
-      tabBarOptions={{
-        activeTintColor: 'black',
-        showLabel: false,
-        style: {
-            backgroundColor: 'white',
-            
+      screenOptions={{
+        tabBarActiveTintColor: 'black',
+        tabBarShowLabel: false,
+        tabBarStyle:[{
+          display: 'flex'
         },
+        null
+        ]
       }}
-    >
+      >
         <Tab.Screen 
           name="Noticias" 
           component={Noticias}
