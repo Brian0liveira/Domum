@@ -3,16 +3,16 @@ import { StyleSheet, View, Image, ScrollView, TouchableOpacity } from 'react-nat
 import { Text } from 'react-native-elements';
 import styles from '../../src/styleSheets/Style';
 
-export default function Principal(){
+export default function Home(){
 
     return( 
     
     <ScrollView showsHorizontalScrollIndicator={false} style={{backgroundColor: "#FFF"}}>
         <View style = {styles.background}>
 
-{/* ------------ PAPEL PRIMEIRO CONTAINER ------------  */}
+{/* ------------ PAPEL CONTAINER ------------  */}
 
-                <View style = {principal.container1} >
+                <View   style = {[principal.container, {backgroundColor:'#9BD1FD'}]} >
                     <View style = {principal.containerTop}>
                         <Text style ={principal.containerTopTitle}>Plástico</Text>
                         <Image style={principal.containerTopImg} source={require('../../src/assets/imgs/Principal/Papel.png')}/>
@@ -22,17 +22,17 @@ export default function Principal(){
                     </View>
                 </View>
                     <View style = {principal.containerButtom}>
-                        <TouchableOpacity style = {principal.container1ButtomPress1}>
+                        <TouchableOpacity style = {[principal.containerButtomPress1, {backgroundColor:'#2DA1FD'}]}>
                             <Text style = {principal.containerButtomText}>Descubra</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style = {principal.container1ButtomPress2}>
+                        <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#9BD1FD'}]}>
                             <Text style = {principal.containerButtomText}>Quiz</Text>
                         </TouchableOpacity>
                     </View>
 
-{/* ------------ VIDRO SEGUNDO CONTAINER ------------  */}
+{/* ------------ VIDRO CONTAINER ------------  */}
 
-                <View style = {principal.container2} >
+                <View style = {[principal.container, {backgroundColor:'#B1FF7A'}]} >
                     <View style = {principal.containerTop}>
                         <Text style ={principal.containerTopTitle}>Metal</Text>
                         <Image style={principal.containerTopImg} source={require('../../src/assets/imgs/Principal/Papel.png')}/>
@@ -42,17 +42,17 @@ export default function Principal(){
                     </View>
                 </View>
                     <View style = {principal.containerButtom}>
-                        <TouchableOpacity style = {principal.container2ButtomPress1}>
+                        <TouchableOpacity style = {[principal.containerButtomPress1, {backgroundColor:'#52B50D'}]}>
                             <Text style = {principal.containerButtomText}>Descubra</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style = {principal.container2ButtomPress2}>
+                        <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#B1FF7A'}]}>
                             <Text style = {principal.containerButtomText}>Quiz</Text>
                         </TouchableOpacity>
                     </View>
 
-{/* ------------ ORGÂNICO TERCEIRO CONTAINER ------------  */}
+{/* ------------ PLÁSTICO CONTAINER ------------  */}
 
-                <View style = {principal.container3} >
+                <View style = {[principal.container, {backgroundColor:'#FFD8D8'}]} >
                     <View style = {principal.containerTop}>
                         <Text style ={principal.containerTopTitle}>Papel</Text>
                         <Image style={principal.containerTopImg} source={require('../../src/assets/imgs/Principal/Papel.png')}/>
@@ -62,17 +62,17 @@ export default function Principal(){
                     </View>
                 </View>
                     <View style = {principal.containerButtom}>
-                        <TouchableOpacity style = {principal.container3ButtomPress1}>
+                        <TouchableOpacity style = {[principal.containerButtomPress1, {backgroundColor:'#F22544'}]}>
                             <Text style = {principal.containerButtomText}>Descubra</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style = {principal.container3ButtomPress2}>
+                        <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#FFD8D8'}]}>
                             <Text style = {principal.containerButtomText}>Quiz</Text>
                         </TouchableOpacity>
                     </View>
 
-{/* ------------ ELETRÔNICO QUARTO CONTAINER ------------  */}
+{/* ------------ METAL CONTAINER ------------  */}
 
-                <View style = {principal.container4} >
+                <View style = {[principal.container, {backgroundColor:'#FFEAA6'}]} >
                     <View style = {principal.containerTop}>
                         <Text style ={principal.containerTopTitle}>Vidro</Text>
                         <Image style={principal.containerTopImg} source={require('../../src/assets/imgs/Principal/Papel.png')}/>
@@ -82,10 +82,10 @@ export default function Principal(){
                     </View>
                 </View>
                     <View style = {principal.containerButtom}>
-                        <TouchableOpacity style = {principal.container4ButtomPress1}>
+                        <TouchableOpacity style = {[principal.containerButtomPress1, {backgroundColor:'#FED140'}]}>
                             <Text style = {principal.containerButtomText}>Descubra</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style = {principal.container4ButtomPress2}>
+                        <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#FFEAA6'}]}>
                             <Text style = {principal.containerButtomText}>Quiz</Text>
                         </TouchableOpacity>
                     </View>
@@ -167,9 +167,9 @@ const principal = StyleSheet.create({
         marginRight:5,
       },
     
-    // CONTAINER 01
+    // CONTAINER 
     
-      container1:{
+      container:{
         height: 200,
         width: '80%',
         margin: 15,
@@ -186,10 +186,9 @@ const principal = StyleSheet.create({
         borderTopEndRadius: 6,
         borderBottomStartRadius: 3,
         borderBottomEndRadius: 3,
-        backgroundColor: '#FFD8D8',
       },
     
-      container1ButtomPress1:{
+      containerButtomPress1:{
         width: '48.5%',
         height: 50,
         alignItems: 'center',
@@ -201,63 +200,18 @@ const principal = StyleSheet.create({
         borderBottomStartRadius: 6,
         borderBottomEndRadius: 3,
         marginRight: 5,
-        backgroundColor: '#F22544',
-      },
-    
-      container1ButtomPress2:{
-        width: '48.5%',
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 5,
-        margin: 0,
-        borderTopStartRadius: 3,
-        borderTopEndRadius: 3,
-        borderBottomStartRadius: 3,
-        borderBottomEndRadius: 6,
-        marginLeft: 5,
-        backgroundColor: '#FFD8D8',
-        
-      },
-    
-      // CONTAINER 02
-    
-      container2:{
-        height: 200,
-        width: '80%',
-        margin: 15,
         shadowColor: "#000",
         shadowOffset: {
-            width: 0,
-            height: 2,
+          width: 0,
+          height: 3,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
         
-        elevation: 5,
-        borderTopStartRadius: 6,
-        borderTopEndRadius: 6,
-        borderBottomStartRadius: 3,
-        borderBottomEndRadius: 3,
-        backgroundColor: '#FFEAA6',
+        elevation: 6,
       },
     
-      container2ButtomPress1:{
-        width: '48.5%',
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 5,
-        margin: 0,
-        borderTopStartRadius: 3,
-        borderTopEndRadius: 3,
-        borderBottomStartRadius: 6,
-        borderBottomEndRadius: 3,
-        marginRight: 5,
-        backgroundColor: '#FED140',
-      },
-    
-      container2ButtomPress2:{
+      containerButtomPress2:{
         width: '48.5%',
         height: 50,
         alignItems: 'center',
@@ -269,115 +223,16 @@ const principal = StyleSheet.create({
         borderBottomStartRadius: 3,
         borderBottomEndRadius: 6,
         marginLeft: 5,
-        backgroundColor: '#FFEAA6',
-        
-      },
-    
-      // CONTAINER 03
-    
-      container3:{
-        height: 200,
-        width: '80%',
-        margin: 15,
         shadowColor: "#000",
         shadowOffset: {
-            width: 0,
-            height: 2,
+          width: 0,
+          height: 3,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
         
-        elevation: 5,
-        borderTopStartRadius: 6,
-        borderTopEndRadius: 6,
-        borderBottomStartRadius: 3,
-        borderBottomEndRadius: 3,
-        backgroundColor: '#9BD1FD',
-      },
-    
-      container3ButtomPress1:{
-        width: '48.5%',
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 5,
-        margin: 0,
-        borderTopStartRadius: 3,
-        borderTopEndRadius: 3,
-        borderBottomStartRadius: 6,
-        borderBottomEndRadius: 3,
-        marginRight: 5,
-        backgroundColor: '#2DA1FD',
-      },
-    
-      container3ButtomPress2:{
-        width: '48.5%',
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 5,
-        margin: 0,
-        borderTopStartRadius: 3,
-        borderTopEndRadius: 3,
-        borderBottomStartRadius: 3,
-        borderBottomEndRadius: 6,
-        marginLeft: 5,
-        backgroundColor: '#9BD1FD',
+        elevation: 6,
         
       },
     
-      // CONTAINER 04
-    
-      container4:{
-        height: 200,
-        width: '80%',
-        margin: 15,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        
-        elevation: 5,
-        borderTopStartRadius: 6,
-        borderTopEndRadius: 6,
-        borderBottomStartRadius: 3,
-        borderBottomEndRadius: 3,
-        backgroundColor: '#B1FF7A',
-      },
-    
-      container4ButtomPress1:{
-        width: '48.5%',
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 5,
-        margin: 0,
-        borderTopStartRadius: 3,
-        borderTopEndRadius: 3,
-        borderBottomStartRadius: 6,
-        borderBottomEndRadius: 3,
-        marginRight: 5,
-        backgroundColor: '#52B50D',
-      },
-    
-      container4ButtomPress2:{
-        width: '48.5%',
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 5,
-        margin: 0,
-        borderTopStartRadius: 3,
-        borderTopEndRadius: 3,
-        borderBottomStartRadius: 3,
-        borderBottomEndRadius: 6,
-        marginLeft: 5,
-        backgroundColor: '#B1FF7A',
-        
-      },
-        })
-    
-    
+});

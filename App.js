@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Cadastro from './screens/Cadastro';
 import Login from './screens/Login';
-import Home from './screens/Home';
+import Navigator from './screens/Navigator';
 
 
 const Stack = createStackNavigator();
@@ -13,8 +13,16 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
+      
+      <Stack.Screen 
+        name="Navigator" 
+        component={Navigator}
+        options={{
+          headerShown: false,
+        }}
+      />
 
-      {/* <Stack.Screen 
+      <Stack.Screen 
         name="Login" 
         component={Login}
         options={{
@@ -28,15 +36,15 @@ function MyStack() {
         options={{
           headerShown: false,
         }}
-      /> */}
-      
+      />
+{/*       
       <Stack.Screen 
-        name="Home" 
-        component={Home}
+        name="Navigator" 
+        component={Navigator}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
 
     </Stack.Navigator>
   );

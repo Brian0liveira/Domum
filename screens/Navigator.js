@@ -7,13 +7,13 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import Noticias from './MainScreens/Noticias';
 import Dicas from './MainScreens/Dicas';
-import Principal from './MainScreens/Principal';
+import Home from './MainScreens/Home';
 import Mapa from './MainScreens/Mapa';
 import Usuario from './MainScreens/Usuario';
 
 const Tab = createBottomTabNavigator();
 
-export default function Home() {
+export default function Navigator() {
   return (
       <Tab.Navigator
       initialRouteName="Noticias"
@@ -55,8 +55,8 @@ export default function Home() {
           }} 
         />
         <Tab.Screen 
-          name="Principal" 
-          component={Principal}
+          name="Home" 
+          component={Home}
           options={{ headerShown: false, 
             tabBarLabel: '',
             tabBarIcon: ({ color, size, focused }) => (

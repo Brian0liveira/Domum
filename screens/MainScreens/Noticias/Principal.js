@@ -16,7 +16,6 @@ export default function Principal({navigation}){
     const agregarFavoritos = () => {
         setLike(!Like);
     };
-    const Drawer = createDrawerNavigator();
 
     return(    
     <ScrollView showsHorizontalScrollIndicator={false} style={{backgroundColor: '#fff'}}>
@@ -54,7 +53,7 @@ export default function Principal({navigation}){
         </View>
     </ScrollView>
 
-    );
+    )
 }
 
 const noticias = StyleSheet.create({
