@@ -33,7 +33,7 @@ export default function Dicas({}){
 
 
             <View style = {noticias.container}>
-                <View style = {noticias.text}>
+                <View style = {[noticias.text, { marginHorizontal: 10, }]}>
                     <View Style = {noticias.maintext}>
                         <Text style = {{fontSize: 15, fontFamily: 'Cabin_600SemiBold', color: '#000', marginBottom: 2.5,}}>
                             Composteira de Garrafa PET
@@ -43,15 +43,15 @@ export default function Dicas({}){
                         </Text>
                     </View>
                 </View>
-                <View style = {noticias.img}/>
+                <View style = {[noticias.img , {backgroundColor: '#8DE170',}]}/>
                 <View style = {noticias.like}>
                         <IconButton style={noticias.likeIcon} icon={"heart-outline"} size={30}/>
                 </View>
             </View>
             
             <View style = {noticias.container}>
-                <View style = {noticias.img2}/>
-                <View style = {noticias.text2}>
+                <View style = {[noticias.img , {backgroundColor: '#6ED1D8', marginLeft: 10,}]}/>
+                <View style = {[noticias.text, { marginLeft: 10,} ]}>
                     <View Style = {noticias.maintext}>
                         <Text style = {{fontSize: 15, fontFamily: 'Cabin_600SemiBold', color: '#000', marginBottom: 2.5,}}>
                             Customização de Roupa
@@ -66,7 +66,7 @@ export default function Dicas({}){
                 </View>
             </View>
             <View style = {noticias.container}>
-                <View style = {noticias.text}>
+                <View style = {[noticias.text, { marginHorizontal: 10, }]}>
                     <View Style = {noticias.maintext}>
                         <Text style = {{fontSize: 15, fontFamily: 'Cabin_600SemiBold', color: '#000', marginBottom: 2.5,}}>
                             Composteira de Garrafa PET
@@ -76,15 +76,15 @@ export default function Dicas({}){
                         </Text>
                     </View>
                 </View>
-                <View style = {noticias.img}/>
+                <View style = {[noticias.img , {backgroundColor: '#8DE170',}]}/>
                 <View style = {noticias.like}>
                         <IconButton style={noticias.likeIcon} icon={"heart-outline"} size={30}/>
                 </View>
             </View>
             
             <View style = {noticias.container}>
-                <View style = {noticias.img2}/>
-                <View style = {noticias.text2}>
+                <View style = {[noticias.img , {backgroundColor: '#6ED1D8', marginLeft: 10,}]}/>
+                <View style = {[noticias.text, { marginLeft: 10, }]}>
                     <View Style = {noticias.maintext}>
                         <Text style = {{fontSize: 15, fontFamily: 'Cabin_600SemiBold', color: '#000', marginBottom: 2.5,}}>
                             Customização de Roupa
@@ -131,7 +131,6 @@ const noticias = StyleSheet.create({
     text:{
         width: '50%',
         height: '80%',
-        marginHorizontal: 10,
     },
 
     maintext:{
@@ -141,7 +140,6 @@ const noticias = StyleSheet.create({
     },
 
     img:{
-        backgroundColor: '#8DE170',
         width: '30%',
         height: '75%',
         borderRadius: 2,
@@ -154,21 +152,5 @@ const noticias = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        
     },
-
-    text2:{
-        width: '50%',
-        height: '80%',
-        marginLeft: 10,
-    },
-
-    img2:{
-        backgroundColor: '#6ED1D8',
-        width: '30%',
-        height: '75%',
-        borderRadius: 2,
-        marginLeft: 10,
-    },
-
 });

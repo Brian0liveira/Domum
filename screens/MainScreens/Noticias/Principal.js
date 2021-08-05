@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, Image, ScrollView, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { IconButton } from 'react-native-paper';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import {} from '@expo-google-fonts/cabin' 
 
 
@@ -31,15 +30,44 @@ export default function Principal({navigation}){
 
 
             <View style = {noticias.container}>
-                <View style = {noticias.img}/>
+                <View style = {[noticias.img, {backgroundColor: '#FB9696',}]}/>
                 <View style = {noticias.bottomCont}>
                     <View style = {noticias.text}>
                         <View Style = {noticias.maintext}>
-                            <Text style = {{fontSize: 13, fontFamily: 'Cabin_600SemiBold', fontWeight: 'bold', color: '#000', marginBottom: 2.5,}}>
-                                Composteira de Garrafa PET
+                            <Text style = {{fontSize: 15, fontFamily: 'Cabin_600SemiBold', fontWeight: 'bold', color: '#000', marginBottom: 2.5,}}>
+                                Países mais sustentáveis do mundo 
                             </Text>
-                            <Text style = {{fontSize: 10, fontFamily: 'Raleway_400Regular', fontWeight: '100', color: '#000'}}>
-                                Sed ipsum odio, placerat ut ullamcorper a, ullamcorper blandit lectus. Morbi luctus, nisi et vehicula sagittis, metus nibh suscipit.
+                        </View>
+                    </View>
+                    <View style = {noticias.like}>
+                            <IconButton style={noticias.likeIcon} icon={"heart-outline"} size={30}/>
+                    </View>
+                </View>
+            </View>
+
+            <View style = {noticias.container}>
+                <View style = {[noticias.img, {backgroundColor: '#8DE170',}]}/>
+                <View style = {noticias.bottomCont}>
+                    <View style = {noticias.text}>
+                        <View Style = {noticias.maintext}>
+                            <Text style = {{fontSize: 15, fontFamily: 'Cabin_600SemiBold', fontWeight: 'bold', color: '#000', marginBottom: 2.5,}}>
+                                Conheça a escova de dente de Bambu 
+                            </Text>
+                        </View>
+                    </View>
+                    <View style = {noticias.like}>
+                            <IconButton style={noticias.likeIcon} icon={"heart-outline"} size={30}/>
+                    </View>
+                </View>
+            </View>
+
+            <View style = {noticias.container}>
+                <View style = {[noticias.img, {backgroundColor: '#6ED1D8',}]}/>
+                <View style = {noticias.bottomCont}>
+                    <View style = {noticias.text}>
+                        <View Style = {noticias.maintext}>
+                            <Text style = {{fontSize: 15, fontFamily: 'Cabin_600SemiBold', fontWeight: 'bold', color: '#000', marginBottom: 2.5,}}>
+                                Agenda 2030 da ONU 
                             </Text>
                         </View>
                     </View>
@@ -85,18 +113,14 @@ const noticias = StyleSheet.create({
 
     text:{
         width: '85%',
-        height: '80%',
+        height: '100%',
         marginLeft: 10,
         marginRight: 5,
-    },
+        justifyContent: 'center',
 
-    maintext:{
-        width: '90%',
-        height: '30%',
     },
 
     img:{
-        backgroundColor: '#8DE170',
         width: '100%',
         height: '60%',
         borderTopRightRadius: 5,
@@ -106,10 +130,10 @@ const noticias = StyleSheet.create({
     like:{
         width: '10%',
         height: '100%',
-        marginRight: 0,
+        marginRight: 5,
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        padding:-5,
+        padding:0,
         alignItems: 'center',
     },
 

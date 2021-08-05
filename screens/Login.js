@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, KeyboardAvoidingView, Image, ScrollView, TouchableOpacity } from 'react-native';
-import { Text, Button } from 'react-native-elements';
+import { StyleSheet, View, KeyboardAvoidingView, Image, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native-elements';
 import { HelperText, TextInput } from 'react-native-paper';
 
 import styles from '../src/styleSheets/mainStyle';
