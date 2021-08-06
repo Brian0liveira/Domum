@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Cadastro from './screens/Cadastro';
 import Login from './screens/Login';
 import Navigator from './screens/Navigator';
-
+import DescubraPapel from './screens/MainScreens/HomeDescubra/DescubraPapel';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +33,14 @@ function MyStack() {
       <Stack.Screen 
         name="Cadastro" 
         component={Cadastro}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Stack.Screen 
+        name="DescubraPapel" 
+        component={DescubraPapel}
         options={{
           headerShown: false,
         }}
