@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { database } from '../src/config/firebase';
 import { StyleSheet, View, KeyboardAvoidingView, Image, TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-elements';
 import { HelperText, TextInput } from 'react-native-paper';
@@ -9,33 +10,19 @@ export default function App({navigation}){
 
     const [emailInput, setEmailInput] = useState(null)
     const [password, setPassword] = useState(null)
-    const [errorEmail, setErrorEmail] = useState(null)
-    const [errorPassword, setErrorPassword] = useState(null)
-    const [hidePass, setHidePass] = React.useState(true);
-    
-    const checkTextInput = () => {
-      let error = false
+    const [hidePass, setHidePass] = React.useState(true);    
 
-      if( emailInput == null || '' || ' '){
-        <HelperText type="info" visible={true}>
-          Email address is invalid!
-        </HelperText>
-        error = true
-        return console.log(error)
-      }
-    };
-    
-
-    const entrar = () => {
-      console.log("entrou")
-      navigation.reset({
-          index: 0,
-          routes: [{name: "Home" }]
+    function login() {
+      database.auth().createUserWithEmailAndPassword(emailInput, password)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        // ...
       })
-    }
-    
-    const Cadastrar = () => {
-      navigation.navigate("Cadastro")
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+  });
     }
 
   return(
@@ -55,7 +42,6 @@ export default function App({navigation}){
                 { colors: {primary: "#4BD6BC"} }
               }
               onChangeText = {value => setEmailInput(value)}
-              errorMessage={errorEmail}
             />
             
             <TextInput style = {styles.input}
@@ -67,10 +53,9 @@ export default function App({navigation}){
               onChangeText = {value => setPassword(value)}
               secureTextEntry = {hidePass}
               right={<TextInput.Icon name="eye" onPress={ () => setHidePass(!hidePass) } />}
-              errorMessage={errorPassword}
             />
 
-            <TouchableOpacity style = {styles.btnSubmit} onPress = {() => entrar()}>
+            <TouchableOpacity style = {styles.btnSubmit} onPress = {() => {login()}}>
               <Text style = {styles.textSubmit}>
                 Login
               </Text>

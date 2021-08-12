@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { database } from '../../../src/config/firebase';
 import { StyleSheet, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-elements';
 import styles from '../../../src/styleSheets/Style';
+import Home from '../Home';
 
 export default function Principal({navigation}){
 
+    const [ home , setHome ] = useState([]);
 
+    useEffect(()=> {
+        database.collection('home').onSnapshot((query) => {
+            const list = [];
+            query.forEach((doc) => {
+                list.push({... doc.data(), id : doc.id});
+            })
+
+            setHome(list);
+
+        })
+    }, [])
     
     const Descubra01 = () => {
         console.log("sim")
@@ -23,11 +37,18 @@ export default function Principal({navigation}){
 
                 <View   style = {[principal.container, {backgroundColor:'#9BD1FD'}]} >
                     <View style = {principal.containerTop}>
-                        <Text style ={principal.containerTopTitle}>Papel</Text>
+                        {home.map((container) => {
+                            return (
+                                <Text style= {principal.containerTopTitle} key={container.id}>
+                                    {container.titulo}
+                                </Text>
+                            )
+                        })}
+                        
                         <Image style={principal.containerTopImg} source={require('../../../src/assets/imgs/Principal/Papel.png')}/>
                     </View>
                     <View style = {principal.containerText}>
-                        <Text style={principal.containerTextContents}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lorem lacus, sed tincidunt velit ornare lobortis. Phasellus laoreet vel lectus at tempus. Praesent sed tortor id null.</Text>
+                        <Text style={principal.containerTextContents}></Text>
                     </View>
                 </View>
                     <View style = {principal.containerButtom}>
@@ -35,66 +56,6 @@ export default function Principal({navigation}){
                             <Text style = {principal.containerButtomText}>Descubra</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#9BD1FD'}]}>
-                            <Text style = {principal.containerButtomText}>Quiz</Text>
-                        </TouchableOpacity>
-                    </View>
-
-{/* ------------ VIDRO CONTAINER ------------  */}
-
-                <View style = {[principal.container, {backgroundColor:'#B1FF7A'}]} >
-                    <View style = {principal.containerTop}>
-                        <Text style ={principal.containerTopTitle}>Vidro</Text>
-                        <Image style={principal.containerTopImg} source={require('../../../src/assets/imgs/Principal/Papel.png')}/>
-                    </View>
-                    <View style = {principal.containerText}>
-                        <Text style={principal.containerTextContents}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lorem lacus, sed tincidunt velit ornare lobortis. Phasellus laoreet vel lectus at tempus. Praesent sed tortor id null.</Text>
-                    </View>
-                </View>
-                    <View style = {principal.containerButtom}>
-                        <TouchableOpacity style = {[principal.containerButtomPress1, {backgroundColor:'#52B50D'}]}>
-                            <Text style = {principal.containerButtomText}>Descubra</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#B1FF7A'}]}>
-                            <Text style = {principal.containerButtomText}>Quiz</Text>
-                        </TouchableOpacity>
-                    </View>
-
-{/* ------------ PLÁSTICO CONTAINER ------------  */}
-
-                <View style = {[principal.container, {backgroundColor:'#FFD8D8'}]} >
-                    <View style = {principal.containerTop}>
-                        <Text style ={principal.containerTopTitle}>Plástico</Text>
-                        <Image style={principal.containerTopImg} source={require('../../../src/assets/imgs/Principal/Papel.png')}/>
-                    </View>
-                    <View style = {principal.containerText}>
-                        <Text style={principal.containerTextContents}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lorem lacus, sed tincidunt velit ornare lobortis. Phasellus laoreet vel lectus at tempus. Praesent sed tortor id null.</Text>
-                    </View>
-                </View>
-                    <View style = {principal.containerButtom}>
-                        <TouchableOpacity style = {[principal.containerButtomPress1, {backgroundColor:'#F22544'}]}>
-                            <Text style = {principal.containerButtomText}>Descubra</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#FFD8D8'}]}>
-                            <Text style = {principal.containerButtomText}>Quiz</Text>
-                        </TouchableOpacity>
-                    </View>
-
-{/* ------------ METAL CONTAINER ------------  */}
-
-                <View style = {[principal.container, {backgroundColor:'#FFEAA6'}]} >
-                    <View style = {principal.containerTop}>
-                        <Text style ={principal.containerTopTitle}>Metal</Text>
-                        <Image style={principal.containerTopImg} source={require('../../../src/assets/imgs/Principal/Papel.png')}/>
-                    </View>
-                    <View style = {principal.containerText}>
-                        <Text style={principal.containerTextContents}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lorem lacus, sed tincidunt velit ornare lobortis. Phasellus laoreet vel lectus at tempus. Praesent sed tortor id null.</Text>
-                    </View>
-                </View>
-                    <View style = {principal.containerButtom}>
-                        <TouchableOpacity style = {[principal.containerButtomPress1, {backgroundColor:'#FED140'}]}>
-                            <Text style = {principal.containerButtomText}>Descubra</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style = {[principal.containerButtomPress2, {backgroundColor:'#FFEAA6'}]}>
                             <Text style = {principal.containerButtomText}>Quiz</Text>
                         </TouchableOpacity>
                     </View>
